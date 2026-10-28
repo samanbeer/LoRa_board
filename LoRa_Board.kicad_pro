@@ -69,8 +69,79 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
+      "drc_exclusions": [
+        [
+          "copper_edge_clearance|149805000|138057500|f11fd838-f67c-4ef2-a84a-2e39d75357ab|9a4c7b7b-3f60-4810-9e69-03c1a5a3dbaa",
+          ""
+        ],
+        [
+          "copper_edge_clearance|149805000|138057500|f11fd838-f67c-4ef2-a84a-2e39d75357ab|ec905cef-7416-4baa-a2f4-db7d21cba83d",
+          ""
+        ],
+        [
+          "copper_edge_clearance|150295000|138057500|f11fd838-f67c-4ef2-a84a-2e39d75357ab|1b24ff5c-4a69-45c1-8890-732b978d2118",
+          ""
+        ],
+        [
+          "copper_edge_clearance|150295000|138057500|f11fd838-f67c-4ef2-a84a-2e39d75357ab|42160c1d-1eac-412a-a69a-b598c464a10c",
+          ""
+        ],
+        [
+          "copper_edge_clearance|151645000|138562500|f11fd838-f67c-4ef2-a84a-2e39d75357ab|038c3d30-3c19-4c93-a712-dfdb11b63e0d",
+          ""
+        ],
+        [
+          "solder_mask_bridge|146075000|137687500|3e1a0fb2-258e-4781-93a0-e83d78f53937|1b360c5d-ff3f-49af-baac-dff8ce47d5a3",
+          ""
+        ],
+        [
+          "solder_mask_bridge|149075000|137687500|e4696756-a3bc-40fe-ac7f-253d1807a0ea|568b1e79-90b2-49d5-8c8f-9edf29e95c47",
+          ""
+        ],
+        [
+          "starved_thermal|105325000|130925000|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|52b18dd8-09b0-45d0-88da-f766e0931236|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|106075000|135625000|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|4a943135-8691-44f8-8fca-ef620d1a985d|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|113000000|126100000|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|42f14bac-0f30-4156-9c03-e0d6cac0f1f0|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|114550000|131350000|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|a2cab963-85ef-431d-8736-63c44ab13760|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|123400000|112875000|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|a9889ce1-88a7-4622-a395-2a7d39c302a4|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|136235000|139825000|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|0b50f6ce-5757-4095-a7d3-5608cde451f3|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|144225000|137687500|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|684d8151-a1a2-4dd3-9f33-d7db16cfecbe|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|144225000|137687500|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|ac73afe5-f347-40f4-ad1e-3dc082faeb8f|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|149525000|135375000|d9710fa9-211a-4b5d-aa9e-c7a5237c199d|60f6f7a3-c610-4c01-9502-526412b2e578|F.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -203,7 +274,13 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.18,
+        0.2,
+        0.35,
+        0.45
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -230,7 +307,16 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.6,
+          "drill": 0.4
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -551,7 +637,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -698,7 +784,7 @@
         "uuid": "a36afa35-aea9-4b16-ad06-ed757e7b8dcc"
       }
     ],
-    "used_designators": "U2,U4,L3-5,#PWR14-18,#PWR25-34,C8-20,TP1-2,J2,R5-6",
+    "used_designators": "U2,U4,L3-5,#PWR14-18,#PWR25-34,C8-20,TP1-2,J2,R5-6,H1-2",
     "variants": []
   },
   "sheets": [
