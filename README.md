@@ -1,3 +1,106 @@
+# LoRa Board
+
+[Forge Project](https://forge.hackclub.com/projects/3508)
+
+
+---
+
+## Project Overview
+
+- **What is it?** A small,  custom LoRa board with **ESP32-S3-WROOM-1** and with the **SX1262** chip which is radio transceiver.
+- **What does it do?** It can be used for wireless data communication with extremely big range. 
+- ****Why does it exist?** Most of LoRa development boards are extremly pricey or use older transceivers or dont have USB-C. 
+
+
+
+---
+
+## Why I Made This
+
+i saw a video about it. And saw how cool it is and I wanted to build custom meshtastic node and try the P2P comunication on it. 
+
+
+
+
+
+## Project Gallery
+
+### 3D PCB Renders
+
+<p align="center">
+  <img src="images/pcb_3d_rendered.png" alt="Rendered PCB Top" width="48%">
+  <img src="images/pcb_3d_rendered_2.png" alt="Rendered PCB Angled" width="48%">
+</p>
+
+### 3D Board Views
+
+<p align="center">
+  <img src="images/pcb_3d.png" alt="3D PCB Front" width="48%">
+  <img src="images/pcb_3d_2.png" alt="3D PCB Back" width="48%">
+</p>
+
+### PCB Layout & Schematic
+
+<p align="center">
+  <img src="images/pcb.png" alt="PCB Layout" width="48%">
+  <img src="images/schematic.png" alt="Schematic Diagram" width="48%">
+</p>
+
+### 3D Enclosure (Fusion 360)
+
+*3D printable case is made in Fusion 360. All CAD and 3D model files are in the [`CAD/`](CAD/) folder.*
+
+<p align="center">
+  <img src="images/full_assembly.png" alt="Fusion 360 Full Assembly" width="96%">
+</p>
+
+<p align="center">
+  <img src="images/from-fusion/case_rendered.png" alt="Fusion 360 Case Render Front" width="48%">
+  <img src="images/from-fusion/case_rendered2.png" alt="Fusion 360 Case Render Rear" width="48%">
+</p>
+
+<p align="center">
+  <img src="images/from-fusion/case1.png" alt="Fusion 360 Case Internal Assembly" width="48%">
+  <img src="images/from-fusion/case2.png" alt="Fusion 360 Internal PCB Placement" width="48%">
+</p>
+
+<p align="center">
+  <img src="images/from-fusion/case3.png" alt="Fusion 360 Case Model View" width="48%">
+</p>
+
+---
+
+## Assembly Guide
+
+### Required Tools & Materials
+
+- Soldering iron
+- Solder wire and flux
+- Tweezers for placing small SMD components
+- 3D Printer (for printing the custom case)
+
+### Assembly Steps
+
+1. **Starts with small schips :**
+   - **SX1262** - align carefully, use soldering iron with sharp tip with flux).
+   - **PE42359** and **AP2112K-3.3** - soldern one pin, verify if its alligned, and solder remaining pins.
+2. **Small passive components:**
+   - Solder small resistors and capacitors.
+   - Solder inductors and the 32 MHz crystal.
+3. **Connectors and Buttons:**
+   - **USB-C connector** - Solder the THT tabs first for strength and then solder the pins using flux.
+   - **U.FL connector** - Center and solder the RF signal pin and ground tabs.
+   - Solder the **BOOT1** and **RESET1** buttons.
+4. **ESP32-S3 Module:**
+   - Place the **ESP32-S3-WROOM-1** module on its footprint pads.
+   - Solder one pad, check alignment and then solder each pin.
+5. **Enclosure and antenna :**
+   - Plug the flexible flat antenna cable into the U.FL connector.
+   - Slide the assembled PCB into case and snap the lid.
+   - Stick the flat antenna on the top of the case or where you want it.
+
+---
+
 ## BOM
 
 | Reference                     | amount | Value / Component                       | Footprint / Package     | Link                                                                                                                                          | Cost (USD, incl. VAT) |
@@ -31,8 +134,26 @@
 | **U3**                        | 1      | SX1262IMLTRT LoRa Transceiver           | QFN-24 (4x4mm)          | [Mouser Link](https://cz.mouser.com/c/?q=SX1262IMLTRT)                                                                                        | $10.83                |
 | **U4**                        | 1      | AP2112K-3.3TRG1 LDO 3.3V 600mA          | SOT-23-5                | [Mouser Link](https://cz.mouser.com/c/?q=AP2112K-3.3TRG1)                                                                                     | $0.32                 |
 | **Y1**                        | 1      | 32MHz Crystal (ABM8-32.000MHZ-10-B1U-T) | SMD 3225-4Pin           | [Mouser Link](https://cz.mouser.com/c/?q=ABM8-32.000MHZ-10-B1U-T)                                                                             | $0.59                 |
-| **PCB**                       | 1      |                                         |                         | [JLCPCB](https://jlcpcb.com)                                                                                                                  |                       |
-| **JLCPCB Shipping**           |        |                                         |                         |                                                                                                                                               |                       |
+| **PCB**                       | 1      |                                         |                         | [JLCPCB](https://jlcpcb.com)                                                                                                                  | ~$10                  |
 | **shipping Mouser**           |        |                                         |                         |                                                                                                                                               | $33.80                |
 | **Mouser Order**              |        |                                         |                         | [cart.XLS file](file:///D:/!Documents/KiCad/LoRa_Board/Basket_Oct20_1158AM.xls)                                                               | **$67.91**            |
 | **Total**                     |        | Cost of everything                      |                         |                                                                                                                                               | **$77.91**            |
+
+<p>
+<img src="images/jlcpcbcart.png" width="48%">
+</p>
+
+## How to Use
+
+1. **Antenna First:** make sure its a compatible 868 MHz antenna. Never turn the board ON if there is no antenna! 
+2. **Power:** Plug a USB-C cable into the board. 
+3. **Flashing Firmware & Meshtastic:**
+   - Hold down the **BOOT1** button, press and release the **RESET1** button, then release **BOOT1** to enter bootloader mode.
+   - Check out the [`Firmware/`](Firmware/) directory for the ready-to-use **Meshtastic** configuration (`variant.h`), pin mappings, and a complete [RadioLib](https://github.com/jgromes/RadioLib) test sketch for PlatformIO/Arduino!
+4. **Wireless Communication:**
+   - Configure to 868 MHz and try sending/receiving LoRa packets.
+   - Perfect for Meshtastic mesh nodes, remote telemetry sensors, and off-grid communication!
+
+---
+
+- Designed by **Šámot** in [Hack Club Forge](https://forge.hackclub.com/projects/3508) project.
